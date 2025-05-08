@@ -13,35 +13,49 @@ This project demonstrates an **end-to-end data pipeline** for processing Netflix
 ![Architecture](https://github.com/user-attachments/assets/c1556b47-4dae-4605-bb61-6c9e33ad95e6)
 
 
-- **Data Ingestion**: ADF parameterized pipeline copies data from GitHub to ADLS Gen2.
-- **Data Validation**: Pipeline checks for specific file arrival in the folder before processing.
-- **Data Processing**: Databricks Auto Loader incrementally loads data, transformations done via PySpark & SparkSQL.
-- **Orchestration**: Databricks workflows and ADF pipelines orchestrate tasks.
-- **Medallion Architecture**:
-  - **Bronze**: Raw data ingestion.
-  - **Silver**: Cleaned and validated data.
-  - **Gold**: Aggregated and business-level data.
-- **Visualization**: Databricks notebooks used for exploration and visualization.
+1. **Data Ingestion (Bronze Layer)**
+   - Source: GitHub repository containing Netflix data.  
+   - Tool: **Azure Data Factory (ADF)** pipelines pull data from GitHub and load it into the **Bronze layer** on **ADLS**.
+   - **Linked services** connect **GitHub → ADF** and **ADF → ADLS Bronze**.  
+   - **Databricks Autoloader** is used to incrementally load new files into the **Bronze Layer**, reducing manual ingestion efforts.
+
+2. **Data Processing & Transformation (Silver Layer)**
+   - **Databricks Access Connector** links ADLS to Databricks.  
+   - **Azure Databricks** processes raw data and applies cleaning & transformations.  
+   - Data is stored as **Delta Tables** in the **Silver Layer**.  
+
+3. **Data Aggregation & Analysis (Gold Layer)**
+   - Transformed data is further aggregated in **Delta Live Tables**.  
+   - **Unity Catalog** is used for data governance & organization.  
+   - **Databricks Workflows** schedule and orchestrate jobs.  
 
 ---
 
-## ⚙️ Tools & Technologies
+## 🛠 Technologies Used  
+- **Azure Data Lake Storage (ADLS)** – Storage for Bronze, Silver, and Gold layers.  
+- **Azure Data Factory (ADF)** – ETL tool for ingesting data from GitHub to ADLS.  
+- **Azure Databricks** – Processing, transformation, and analysis engine.  
+- **Delta Lake & Delta Live Tables** – Optimized storage & real-time transformations.  
+- **Databricks Autoloader** – Automated and incremental ingestion of new data files.  
+- **Unity Catalog** – Centralized governance for managing data assets.  
+- **Databricks Workflows** – Job scheduling and orchestration.
 
-- Azure Data Factory (ADF)
-- Azure Data Lake Storage Gen2 (ADLS Gen2)
-- Azure Databricks (PySpark, SparkSQL, Auto Loader, Delta Live Tables)
-- GitHub (Source Data)
-- Medallion Architecture
 
 ---
 
-## 🔑Key highlights:
-- Automated file arrival detection
-- Incremental loading with Databricks Autoloader
-- Data transformation using PySpark and SparkSQL
-- Parameterized and reusable pipelines and workflows
-- Delta Live Tables for robust data management
-- Interactive dashboards and visualizations
+🎯 Key Features
+
+✅ End-to-end data pipeline with Azure & Databricks.
+
+✅ Medallion architecture (Bronze, Silver, Gold) for structured data processing.
+
+✅ Delta Live Tables for real-time transformations.
+
+✅ Automated workflows & scheduling using Databricks Workflows.
+
+✅ Unity Catalog for centralized data governance.
+
+---
 
 ## 📁 Folder Descriptions
 
