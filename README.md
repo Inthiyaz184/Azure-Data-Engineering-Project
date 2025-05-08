@@ -4,8 +4,7 @@ This project demonstrates an end-to-end data engineering pipeline using Azure an
 
 ## 📊 Project Overview
 
-The project ingests Netflix-related data from GitHub, processes it through Azure Data Factory (ADF) pipelines, transforms and analyzes it using Databricks with PySpark and SparkSQL, and visualizes results in Databricks notebooks. It also uses Delta Live Tables (DLT) to implement the bronze, silver, and gold layers of the Medallion architecture.
-
+This project demonstrates an end-to-end data pipeline for processing Netflix data using Azure and Databricks. It follows the Medallion Architecture (Bronze, Silver, Gold) on Azure Data Lake Storage (ADLS) and utilizes Azure Data Factory (ADF), Databricks, Delta Live Tables, and Databricks Autoloader for seamless data ingestion, transformation, and orchestration.
 ---
 
 ## 🏗️ Architecture
