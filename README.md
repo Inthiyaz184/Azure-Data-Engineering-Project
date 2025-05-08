@@ -34,3 +34,11 @@ The project ingests Netflix-related data from GitHub, processes it through Azure
 - Medallion Architecture
 
 ---
+
+## 🔑Key highlights:
+- Automated file arrival detection
+- Incremental loading with Databricks Autoloader
+- Data transformation using PySpark and SparkSQL
+- Parameterized and reusable pipelines and workflows
+- Delta Live Tables for robust data management
+- Interactive dashboards and visualizations
