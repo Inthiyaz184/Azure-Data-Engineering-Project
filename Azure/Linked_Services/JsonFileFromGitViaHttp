@@ -1,0 +1,13 @@
+{
+    "name": "JsonFileFromGitViaHTTP",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "properties": {
+        "annotations": [],
+        "type": "HttpServer",
+        "typeProperties": {
+            "url": "https://raw.githubusercontent.com/Inthiyaz184/Azure-Data-Engineering-Project/refs/heads/Testing_branch/files_json.txt",
+            "enableServerCertificateValidation": true,
+            "authenticationType": "Anonymous"
+        }
+    }
+}
