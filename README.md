@@ -42,3 +42,13 @@ The project ingests Netflix-related data from GitHub, processes it through Azure
 - Parameterized and reusable pipelines and workflows
 - Delta Live Tables for robust data management
 - Interactive dashboards and visualizations
+
+## 📁 Folder Descriptions
+
+| Folder                 | Description                                        |
+|------------------------|---------------------------------------------------|
+| `Azure/`              | ADF pipeline + linked services JSON files         |
+| `Data/`               | Sample input data files                           |
+| `Databricks_notebooks/` | Databricks notebooks for transformation/analysis  |
+| `parameter_file/`     | ADF parameter files for dynamic configuration     |
+| `pipelinescreenshots/`| Screenshots of pipelines, workflows, architecture |
